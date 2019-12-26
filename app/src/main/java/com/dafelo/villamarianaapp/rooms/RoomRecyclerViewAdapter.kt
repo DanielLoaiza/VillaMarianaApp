@@ -1,37 +1,36 @@
 package com.dafelo.villamarianaapp.rooms
 
-import androidx.recyclerview.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.dafelo.villamarianaapp.R
-
-
+import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.RoomFragment.OnListFragmentInteractionListener
-import com.dafelo.villamarianaapp.rooms.dummy.DummyContent.DummyItem
-
 import kotlinx.android.synthetic.main.fragment_room.view.*
 
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
- * specified [OnListFragmentInteractionListener].
- * TODO: Replace the implementation with code for your data type.
- */
-class MyRoomRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
+class RoomRecyclerViewAdapter(
+    private val rooms: MutableList<Room>,
     private val mListener: OnListFragmentInteractionListener?
-) : RecyclerView.Adapter<MyRoomRecyclerViewAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<RoomRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
+            val item = v.tag as Room
             // Notify the active callbacks interface (the activity, if the fragment is attached to
             // one) that an item has been selected.
             mListener?.onListFragmentInteraction(item)
         }
+    }
+
+    fun updateRooms(updatedRooms: List<Room>) {
+        rooms.clear()
+        rooms.addAll(updatedRooms)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,24 +40,24 @@ class MyRoomRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mValues[position]
-        holder.mIdView.text = item.id
-        holder.mContentView.text = item.content
+        val item = rooms[position]
+        holder.roomIdView.text = item.number.toString()
+        holder.roomContentView.text = "Daniel Loaiza"
 
-        with(holder.mView) {
+        with(holder.roomView) {
             tag = item
             setOnClickListener(mOnClickListener)
         }
     }
 
-    override fun getItemCount(): Int = mValues.size
+    override fun getItemCount(): Int = rooms.size
 
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.content
+    inner class ViewHolder(val roomView: View) : RecyclerView.ViewHolder(roomView) {
+        val roomIdView: TextView = roomView.item_number
+        val roomContentView: TextView = roomView.content
 
         override fun toString(): String {
-            return super.toString() + " '" + mContentView.text + "'"
+            return super.toString() + " '" + roomContentView.text + "'"
         }
     }
 }

@@ -1,30 +1,18 @@
 package com.dafelo.villamarianaapp
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import androidx.fragment.app.replace
 import com.dafelo.villamarianaapp.components.ReservationComponent
-import com.dafelo.villamarianaapp.database.AppDatabase
 import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.RoomFragment
-import com.dafelo.villamarianaapp.rooms.dummy.DummyContent
-
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), RoomFragment.OnListFragmentInteractionListener {
 
     // Reference to the Login graph
     lateinit var reservationComponent: ReservationComponent
 
-    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
+    override fun onListFragmentInteraction(item: Room?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

@@ -13,6 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/right_frame"
+        app:layout_constraintWidth_percent="0.45"
         app:layout_constraintBottom_toTopOf="@+id/navigation"/>
 
     <FrameLayout
