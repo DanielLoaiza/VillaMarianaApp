@@ -11,8 +11,8 @@ import com.dafelo.villamarianaapp.reservation.entities.Room
 interface RoomDAO {
 
     @Query("SELECT * FROM rooms")
-    fun getAll(): List<Room>
+    suspend fun getAll(): List<Room>
 
     @Insert
-    fun insertAll(vararg room: Room)
+    suspend fun insertAll(vararg room: Room)
 }

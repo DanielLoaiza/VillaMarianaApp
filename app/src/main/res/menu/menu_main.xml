@@ -3,8 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dafelo.villamarianaapp.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_reservation"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_reservation"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_history"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_insert_invitation_black_24dp"
+        android:title="@string/action_history"
         app:showAsAction="never" />
 </menu>

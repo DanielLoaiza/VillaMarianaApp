@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Villa Mariana App</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_history">Historial</string>
+    <string name="action_reservation">Reservas</string>
 </resources>
