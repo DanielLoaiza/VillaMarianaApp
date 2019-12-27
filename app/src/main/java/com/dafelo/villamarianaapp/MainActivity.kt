@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dafelo.villamarianaapp.components.ReservationComponent
 import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.RoomFragment
+import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), RoomFragment.OnListFragmentInteractionListener {
@@ -12,8 +13,8 @@ class MainActivity : AppCompatActivity(), RoomFragment.OnListFragmentInteraction
     // Reference to the Login graph
     lateinit var reservationComponent: ReservationComponent
 
-    override fun onListFragmentInteraction(item: Room?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onListFragmentInteraction(item: RoomReservationInfo) {
+       //TODO: implement reservation fragment
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

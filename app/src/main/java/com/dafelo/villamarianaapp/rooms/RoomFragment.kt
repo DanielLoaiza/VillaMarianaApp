@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dafelo.villamarianaapp.MainActivity
 import com.dafelo.villamarianaapp.R
 import com.dafelo.villamarianaapp.reservation.entities.Room
+import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
 import javax.inject.Inject
 
 /**
@@ -58,7 +59,7 @@ class RoomFragment : Fragment() {
             throw RuntimeException("$context must implement OnListFragmentInteractionListener")
         }
 
-        vm.rooms.observe(this, Observer {
+        vm.roomReservations.observe(this, Observer {
             adapter.updateRooms(it)
         })
     }
@@ -80,13 +81,11 @@ class RoomFragment : Fragment() {
      * for more information.
      */
     interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onListFragmentInteraction(item: Room?)
+        fun onListFragmentInteraction(item: RoomReservationInfo)
     }
 
     companion object {
 
-        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance() = RoomFragment()
     }

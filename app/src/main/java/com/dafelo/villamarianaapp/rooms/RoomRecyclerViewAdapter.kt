@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dafelo.villamarianaapp.R
 import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.RoomFragment.OnListFragmentInteractionListener
+import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
 import kotlinx.android.synthetic.main.fragment_room.view.*
 
 class RoomRecyclerViewAdapter(
-    private val rooms: MutableList<Room>,
+    private val rooms: MutableList<RoomReservationInfo>,
     private val mListener: OnListFragmentInteractionListener?
 ) : RecyclerView.Adapter<RoomRecyclerViewAdapter.ViewHolder>() {
 
@@ -27,7 +28,7 @@ class RoomRecyclerViewAdapter(
         }
     }
 
-    fun updateRooms(updatedRooms: List<Room>) {
+    fun updateRooms(updatedRooms: List<RoomReservationInfo>) {
         rooms.clear()
         rooms.addAll(updatedRooms)
         notifyDataSetChanged()
@@ -41,8 +42,8 @@ class RoomRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = rooms[position]
-        holder.roomIdView.text = item.number.toString()
-        holder.roomContentView.text = "Daniel Loaiza"
+        holder.roomIdView.text = item.roomNumber.toString()
+        holder.roomContentView.text = item.guestName
 
         with(holder.roomView) {
             tag = item
@@ -51,6 +52,7 @@ class RoomRecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int = rooms.size
+
 
     inner class ViewHolder(val roomView: View) : RecyclerView.ViewHolder(roomView) {
         val roomIdView: TextView = roomView.item_number

@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(includes = [RoomDAOModule::class])
+@Module(includes = [RoomDAOModule::class, ReservationDAOModule::class])
 class DatabaseModule {
 
     @Provides
