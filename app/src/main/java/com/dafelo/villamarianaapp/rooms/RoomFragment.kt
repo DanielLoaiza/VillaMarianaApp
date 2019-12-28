@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dafelo.villamarianaapp.MainActivity
 import com.dafelo.villamarianaapp.R
-import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
 import javax.inject.Inject
 
@@ -49,7 +48,7 @@ class RoomFragment : Fragment() {
     }
 
     override fun onAttach(context: Context) {
-        (activity as MainActivity).reservationComponent.inject(this)
+        (activity as MainActivity).reservationComponent.roomComponent().create().inject(this)
         val vm = ViewModelProviders.of(this, viewModelFactory)[RoomsViewModel::class.java]
         super.onAttach(context)
         if (context is RoomFragmentInteractionListener) {

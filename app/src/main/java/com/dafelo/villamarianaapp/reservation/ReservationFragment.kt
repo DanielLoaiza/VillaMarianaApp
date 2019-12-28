@@ -33,7 +33,7 @@ class ReservationFragment : Fragment() {
     }
 
     override fun onAttach(context: Context) {
-        (activity as MainActivity).reservationComponent.inject(this)
+        (activity as MainActivity).reservationComponent.reservationComponent().create().inject(this)
         viewModel = ViewModelProviders.of(this, viewModelFactory)[ReservationViewModel::class.java]
         super.onAttach(context)
     }

@@ -14,6 +14,10 @@ annotation class ApplicationContext
 @Retention(value = AnnotationRetention.RUNTIME)
 annotation class ActivityScope
 
+@Scope
+@Retention(value = AnnotationRetention.RUNTIME)
+annotation class FragmentScope
+
 @MustBeDocumented
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)

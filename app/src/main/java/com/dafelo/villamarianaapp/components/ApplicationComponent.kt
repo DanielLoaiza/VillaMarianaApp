@@ -2,17 +2,23 @@ package com.dafelo.villamarianaapp.components
 
 import android.content.Context
 import com.dafelo.villamarianaapp.components.qualifiers.ApplicationContext
+import com.dafelo.villamarianaapp.database.AppDatabase
 import com.dafelo.villamarianaapp.modules.DatabaseModule
+import com.dafelo.villamarianaapp.reservation.daos.ReservationDAO
+import com.dafelo.villamarianaapp.reservation.daos.RoomDAO
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
-@Component(modules = [DatabaseModule::class, SubcomponentsModule::class])
+@Component(modules = [DatabaseModule::class])
 @Singleton
 interface ApplicationComponent {
-    // This function exposes the LoginComponent Factory out of the graph so consumers
-// can use it to obtain new instances of LoginComponent
-    fun reservationComponent(): ReservationComponent.Factory
+
+    fun database(): AppDatabase
+
+    fun reservationDAO(): ReservationDAO
+
+    fun roomDAO(): RoomDAO
 
     @Component.Factory
     interface Factory {

@@ -5,18 +5,20 @@ import com.dafelo.villamarianaapp.components.qualifiers.ActivityScope
 import com.dafelo.villamarianaapp.modules.ReservationViewModelModule
 import com.dafelo.villamarianaapp.reservation.ReservationFragment
 import com.dafelo.villamarianaapp.rooms.RoomFragment
+import dagger.Component
 import dagger.Subcomponent
 
-@Subcomponent(modules = [ReservationViewModelModule::class])
+@Component(dependencies = [ApplicationComponent::class], modules = [SubcomponentsModule::class])
 @ActivityScope
 interface ReservationComponent {
-    // Factory that is used to create instances of this subcomponent
-    @Subcomponent.Factory
+
+    fun reservationComponent(): ReservationSubComponent.Factory
+    fun roomComponent(): RoomComponent.Factory
+    // Factory that is used to create instances of this component
+    @Component.Factory
     interface Factory {
-        fun create(): ReservationComponent
+        fun create(applicationComponent: ApplicationComponent): ReservationComponent
     }
 
     fun inject(loginActivity: MainActivity)
-    fun inject(roomFragment: RoomFragment)
-    fun inject(reservationFragment: ReservationFragment)
 }

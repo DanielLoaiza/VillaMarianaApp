@@ -2,6 +2,7 @@ package com.dafelo.villamarianaapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dafelo.villamarianaapp.components.DaggerReservationComponent
 import com.dafelo.villamarianaapp.components.ReservationComponent
 import com.dafelo.villamarianaapp.reservation.ReservationFragment
 import com.dafelo.villamarianaapp.reservation.entities.Room
@@ -25,8 +26,7 @@ class MainActivity : AppCompatActivity(), RoomFragment.RoomFragmentInteractionLi
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        reservationComponent =
-            (application as Application).applicationComponent.reservationComponent().create()
+        reservationComponent = DaggerReservationComponent.factory().create((application as Application).applicationComponent)
         // Creation of the login graph using the application graph
 
         // Make Dagger instantiate @Inject fields in LoginActivity
