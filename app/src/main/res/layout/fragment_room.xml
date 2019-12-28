@@ -17,7 +17,7 @@
             android:layout_margin="@dimen/text_margin"
             android:layout_marginTop="8dp"
             android:textAppearance="?attr/textAppearanceListItem"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_more"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="101" />
@@ -36,7 +36,7 @@
             tools:text="Daniel Loaiza" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

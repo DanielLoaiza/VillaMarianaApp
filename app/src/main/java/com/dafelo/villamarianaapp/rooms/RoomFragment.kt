@@ -29,7 +29,7 @@ class RoomFragment : Fragment() {
 
     private lateinit var adapter: RoomRecyclerViewAdapter
 
-    private var listener: OnListFragmentInteractionListener? = null
+    private var listener: RoomFragmentInteractionListener? = null
 
 
     override fun onCreateView(
@@ -52,7 +52,7 @@ class RoomFragment : Fragment() {
         (activity as MainActivity).reservationComponent.inject(this)
         val vm = ViewModelProviders.of(this, viewModelFactory)[RoomsViewModel::class.java]
         super.onAttach(context)
-        if (context is OnListFragmentInteractionListener) {
+        if (context is RoomFragmentInteractionListener) {
             listener = context
             adapter = RoomRecyclerViewAdapter(mutableListOf(), listener)
         } else {
@@ -69,18 +69,8 @@ class RoomFragment : Fragment() {
         listener = null
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson
-     * [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
-    interface OnListFragmentInteractionListener {
+
+    interface RoomFragmentInteractionListener {
         fun onListFragmentInteraction(item: RoomReservationInfo)
     }
 

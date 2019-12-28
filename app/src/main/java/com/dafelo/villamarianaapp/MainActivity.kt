@@ -8,7 +8,7 @@ import com.dafelo.villamarianaapp.rooms.RoomFragment
 import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), RoomFragment.OnListFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), RoomFragment.RoomFragmentInteractionListener {
 
     // Reference to the Login graph
     lateinit var reservationComponent: ReservationComponent
