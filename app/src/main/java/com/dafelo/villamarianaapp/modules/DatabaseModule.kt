@@ -17,7 +17,7 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "villa-mariana.db.db"
+            "villa-mariana.db"
         ).createFromAsset("database/villa-mariana.db").build()
     }
 }

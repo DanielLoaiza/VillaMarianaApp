@@ -9,7 +9,7 @@ import java.util.*
         ForeignKey(
             entity = Guest::class,
             parentColumns = ["id"],
-            childColumns = ["mainGuest"]
+            childColumns = ["main_guest"]
         ), ForeignKey(
             entity = Room::class,
             parentColumns = ["number"],
@@ -22,6 +22,6 @@ data class Reservation(
     @ColumnInfo(name = "start_date") val startDate: Date,
     @ColumnInfo(name = "end_date") val endDate: Date,
     @ColumnInfo(name = "guests_quantity") val guestsQuantity: Int,
-    val mainGuest: String,
+    @ColumnInfo(name = "main_guest")val mainGuest: String,
     val room: Int
 )

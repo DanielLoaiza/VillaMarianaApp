@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 data class Guest(
     @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "insurance") val eps: String
+    @ColumnInfo(name = "insurance") val eps: String,
+    @ColumnInfo(name = "email") val email: String
 )

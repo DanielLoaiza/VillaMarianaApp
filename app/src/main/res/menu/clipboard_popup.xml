@@ -5,9 +5,7 @@
     <item
         android:id="@+id/item_reserve"
         android:title="Reservar" />
-    <item
-        android:id="@+id/item_cancel"
-        android:title="Cancelar" />
+
     <item
         android:id="@+id/item_release"
         android:title="Liberar" />

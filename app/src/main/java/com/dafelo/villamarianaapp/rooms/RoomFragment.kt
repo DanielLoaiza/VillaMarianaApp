@@ -20,7 +20,7 @@ import javax.inject.Inject
 /**
  * A fragment representing a list of Items.
  * Activities containing this fragment MUST implement the
- * [RoomFragment.OnListFragmentInteractionListener] interface.
+ * [RoomFragment.RoomFragmentInteractionListener] interface.
  */
 class RoomFragment : Fragment() {
 
@@ -72,6 +72,7 @@ class RoomFragment : Fragment() {
 
     interface RoomFragmentInteractionListener {
         fun onListFragmentInteraction(item: RoomReservationInfo)
+        fun onReserveClicked(item: RoomReservationInfo)
     }
 
     companion object {

@@ -3,6 +3,7 @@ package com.dafelo.villamarianaapp.components
 import com.dafelo.villamarianaapp.MainActivity
 import com.dafelo.villamarianaapp.components.qualifiers.ActivityScope
 import com.dafelo.villamarianaapp.modules.ReservationViewModelModule
+import com.dafelo.villamarianaapp.reservation.ReservationFragment
 import com.dafelo.villamarianaapp.rooms.RoomFragment
 import dagger.Subcomponent
 
@@ -17,4 +18,5 @@ interface ReservationComponent {
 
     fun inject(loginActivity: MainActivity)
     fun inject(roomFragment: RoomFragment)
+    fun inject(reservationFragment: ReservationFragment)
 }

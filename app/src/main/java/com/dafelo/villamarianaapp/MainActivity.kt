@@ -3,6 +3,7 @@ package com.dafelo.villamarianaapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dafelo.villamarianaapp.components.ReservationComponent
+import com.dafelo.villamarianaapp.reservation.ReservationFragment
 import com.dafelo.villamarianaapp.reservation.entities.Room
 import com.dafelo.villamarianaapp.rooms.RoomFragment
 import com.dafelo.villamarianaapp.rooms.entities.RoomReservationInfo
@@ -15,6 +16,12 @@ class MainActivity : AppCompatActivity(), RoomFragment.RoomFragmentInteractionLi
 
     override fun onListFragmentInteraction(item: RoomReservationInfo) {
        //TODO: implement reservation fragment
+    }
+
+    override fun onReserveClicked(item: RoomReservationInfo) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(right_frame.id, ReservationFragment.newInstance())
+        transaction.commit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -56,10 +56,7 @@ class RoomRecyclerViewAdapter(
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.item_reserve -> {
-
-                    }
-                    R.id.item_cancel -> {
-
+                        mListener?.onReserveClicked(rooms[position])
                     }
 
                     else -> {

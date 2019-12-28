@@ -2,6 +2,7 @@ package com.dafelo.villamarianaapp.modules
 
 import androidx.lifecycle.ViewModel
 import com.dafelo.villamarianaapp.components.qualifiers.ViewModelKey
+import com.dafelo.villamarianaapp.reservation.ReservationViewModel
 import com.dafelo.villamarianaapp.rooms.RoomsViewModel
 import dagger.Binds
 import dagger.Module
@@ -14,4 +15,9 @@ abstract class ReservationViewModelModule {
     @IntoMap
     @ViewModelKey(RoomsViewModel::class)
     internal abstract fun roomsViewModel(viewModel: RoomsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ReservationViewModel::class)
+    internal abstract fun reservationViewModel(viewModel: ReservationViewModel): ViewModel
 }
