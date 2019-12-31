@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.dafelo.villamarianaapp.MainActivity
 
 import com.dafelo.villamarianaapp.R
+import com.dafelo.villamarianaapp.databinding.ReservationFragmentBinding
 import com.dafelo.villamarianaapp.rooms.RoomsViewModel
 import javax.inject.Inject
 
@@ -25,11 +27,14 @@ class ReservationFragment : Fragment() {
 
     private lateinit var viewModel: ReservationViewModel
 
+    private lateinit var binding: ReservationFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.reservation_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.reservation_fragment, container, false)
+        return binding.root
     }
 
     override fun onAttach(context: Context) {
