@@ -14,26 +14,28 @@
             android:layout_height="match_parent">
 
 
-            <EditText
-                android:id="@+id/editText_startDate"
+            <TextView
+                android:id="@+id/textView_startDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@android:style/Widget.EditText"
                 android:layout_marginTop="8dp"
                 android:ems="10"
-                android:inputType="date"
+                android:textIsSelectable="true"
                 app:layout_constraintEnd_toStartOf="@+id/textView6"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editText_endDate"
+            <TextView
+                android:id="@+id/textView_endDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@android:style/Widget.EditText"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="9dp"
                 android:ems="10"
-                android:inputType="date"
+                android:textIsSelectable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -48,7 +50,7 @@
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText_startDate">
+                app:layout_constraintTop_toBottomOf="@+id/textView_startDate">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -161,7 +163,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:text="Fecha inicio"
-                app:layout_constraintEnd_toStartOf="@+id/editText_startDate"
+                app:layout_constraintEnd_toStartOf="@+id/textView_startDate"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -173,9 +175,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Fecha fin"
-                app:layout_constraintEnd_toStartOf="@+id/editText_endDate"
+                app:layout_constraintEnd_toStartOf="@+id/textView_endDate"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/editText_startDate"
+                app:layout_constraintStart_toEndOf="@+id/textView_startDate"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
