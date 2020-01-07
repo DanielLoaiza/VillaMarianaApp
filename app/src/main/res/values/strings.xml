@@ -2,4 +2,13 @@
     <string name="app_name">Villa Mariana App</string>
     <string name="action_history">Historial</string>
     <string name="action_reservation">Reservas</string>
+    <string name="reservation_name">Nombre</string>
+    <string name="reservation_save">Guardar</string>
+    <string name="reservation_start_date">Fecha inicio</string>
+    <string name="reservation_end_date">Fecha Fin</string>
+    <string name="reservation_phone">Telefono</string>
+    <string name="reservation_email">E-mail</string>
+    <string name="reservation_insurance">EPS</string>
+    <string name="reservation_address">Dirección</string>
+    <string name="reservation_id">Identificacion</string>
 </resources>
